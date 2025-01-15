@@ -1,5 +1,6 @@
-data class Persona(var nombre:String, var edad: Int){
-
+class Persona(var nombre:String, var edad: Int){
+    operator fun component1():String =nombre
+    operator fun component2():Int =edad
 
 }
 data class User(var nombre:String, var edad: Int){

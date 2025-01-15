@@ -1,14 +1,14 @@
+enum class Palo {
+    Bastos, Copas, Espadas, Oros
+}
+
+class Carta(val palo: Palo, val numero: Int){
+    override fun toString(): String {
+        return ("("+palo.toString().uppercase()+", "+numero+")")
+    }
+}
+
 class Baraja {
-    enum class Palo {
-        Bastos, Copas, Espadas, Oros
-    }
-
-    data class Carta(val palo: Palo, val numero: Int){
-        override fun toString(): String {
-            return ("("+palo.toString().uppercase()+", "+numero+")")
-        }
-    }
-
     val cartas: MutableList<Carta> = mutableListOf()
     val numeros = listOf(1, 2, 3, 4, 5, 6, 7, 10, 11, 12)
 

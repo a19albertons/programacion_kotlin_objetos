@@ -1,9 +1,8 @@
-data class Estadisticas (var menor:Float, var mayor:Float, var media:Double)
-fun calcularEstadisticas(numeros: List<Int>): Estadisticas{
+fun calcularEstadisticas(numeros: List<Int>): Triple<Float, Float, Double> {
     var menor = numeros.min().toFloat()
     var mayor = numeros.max().toFloat()
     var media = numeros.average()
-    return Estadisticas(menor, mayor, media)
+    return Triple(menor, mayor, media)
 
 }
 

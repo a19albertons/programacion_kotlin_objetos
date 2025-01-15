@@ -1,18 +1,14 @@
 class Producto{
 
-    var not_to_string=true
-    var descrip:String = ""
-        get() = if (not_to_string) {
-            field.uppercase()
-        }
-        else{
-            field
-        }
+    private var _descrip:String
+    var descrip:String
+        get() = _descrip.uppercase()
         set(value) {
-            field = value
+            _descrip = value
         }
-    var cantidad:Int=0
-        get() = field
+    private var _cantidad:Int
+    var cantidad:Int
+        get() = _cantidad
         set(value) {
             var devolver:Int
             if (value>=0){
@@ -21,18 +17,15 @@ class Producto{
             else {
                 devolver=0
             }
-            field=devolver
+            _cantidad=devolver
         }
     constructor(descrip:String, cantidad:Int){
-        this.descrip=descrip
-        this.cantidad=cantidad
+        this._descrip=descrip
+        this._cantidad=cantidad
     }
 
     override fun toString(): String {
-        not_to_string=false
-        var devolver= descrip+" "+cantidad
-        not_to_string=true
-        return devolver
+        return _descrip+" "+_cantidad
     }
 }
 fun main(){

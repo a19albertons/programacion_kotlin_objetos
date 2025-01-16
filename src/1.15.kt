@@ -1,8 +1,9 @@
-fun calcularEstadisticas(numeros: List<Int>): Triple<Float, Float, Double> {
-    var menor = numeros.min().toFloat()
-    var mayor = numeros.max().toFloat()
+fun calcularEstadisticas(numeros: List<Int>): List<Double> {
+    require(numeros.isNotEmpty())
+    var menor = numeros.min().toDouble()
+    var mayor = numeros.max().toDouble()
     var media = numeros.average()
-    return Triple(menor, mayor, media)
+    return listOf(menor, mayor, media)
 
 }
 

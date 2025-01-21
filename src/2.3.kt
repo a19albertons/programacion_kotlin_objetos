@@ -1,13 +1,10 @@
-class MyLittleDecimal{
+class MyLittleDecimal(entrada: String) {
     var valor:Int
 
-    constructor(entrada:String){
+    init {
         this.valor=entrada.replace(",","").toInt()
     }
 
-    private fun getValor2(): Int{
-        return valor
-    }
 
     override fun toString(): String {
         var primera_mitad=(valor/100).toString()

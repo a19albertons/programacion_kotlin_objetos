@@ -1,4 +1,4 @@
-class TimeLapse2(var h: Int, var m: Int, var s: Int){
+class TimeLapse(var h: Int, var m: Int, var s: Int){
     init {
         if (this.m>59){
             this.m = 59

@@ -1,11 +1,10 @@
-class MiniSB2{
+class MiniSB(entrada: String = "") {
     var buffer: CharArray
+        private set
     var contentSize:Int
-    constructor(){
-        this.buffer= CharArray(10)
-        this.contentSize=0
-    }
-    constructor(entrada: String){
+        private set
+
+    init {
         this.buffer= CharArray(entrada.length *2)
         entrada.toCharArray().copyInto(buffer,0)
         this.contentSize=entrada.length
@@ -20,7 +19,6 @@ class MiniSB2{
                     this.buffer[contentSize] = i
                     contentSize++
                 }
-                contentSize--
             }
             for (i in entrada){
                 this.buffer[contentSize]=i
@@ -38,13 +36,9 @@ class MiniSB2{
         return buffer.size
     }
     fun deleteFromIndex(numero: Int){
-
-        var temp=buffer
-        this.buffer=CharArray(bufferLength())
-        for (i in 0..numero-1){
-                this.buffer[i]=temp[i]
+        if (numero>=0 && numero<= contentSize){
+            contentSize=numero
         }
-        contentSize=numero
     }
     fun reverse(){
         var temp=buffer
@@ -106,54 +100,32 @@ class MiniSB2{
     }
 
     override fun toString(): String {
-        var devolver=StringBuilder()
-        for (i in 0..contentSize-1) {
-            devolver.append(buffer[i])
-        }
-        return devolver.toString()
+        return String(buffer,0,contentSize)
     }
 }
-
-
 fun main(){
-    var miniSB = MiniSB()//incializa a ""
-//    println(""+miniSB.bufferLength() + ", "+ miniSB.contentSize())
-//    miniSB.append("Eran dos tipos requete finos, ")
-//    println(""+miniSB.bufferLength() + ", "+ miniSB.contentSize())
-//    miniSB.append("eran dos tipos medio chiflaos")
-//    println(""+miniSB.bufferLength() + ", "+ miniSB.contentSize())
-//    miniSB.append("!.")
-//    println(""+miniSB.bufferLength() + ", "+ miniSB.contentSize())
-//    println(miniSB)
-//
-//    println()
-//
-//    miniSB = MiniSB("Eran dos tipos requete finos")
-//    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-//    miniSB.deleteFromIndex(4)
-//    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-//    println(miniSB)
-//    miniSB.reverse()
-//    println(miniSB)
-//
-//    println()
-//
-//    miniSB = MiniSB("Eran dos tipos requete finos")
-//    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-//    miniSB.deleteFromIndex(4)
-//    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-//    println(miniSB)
-//    miniSB.reverse()
-//    println(miniSB)
-//
-//    println()
+    var miniSB = MiniSB("123")
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    println(miniSB)
+    miniSB.append("456")
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    println(miniSB)
+    miniSB.append("7")
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    println(miniSB)
+    miniSB = MiniSB()
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    println(miniSB)
+    miniSB.append("12")
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    println(miniSB)
+
 
     miniSB = MiniSB("Eran dos tipos requete finos")
-    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-    miniSB.insert(14, ", don Pepito y don José,")
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
+    miniSB.deleteFromIndex(4)
+    println(""+miniSB.buffer.size + ", " + miniSB.contentSize)
     println(miniSB)
-    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
-    miniSB.insert(46, " extra")
+    miniSB.reverse()
     println(miniSB)
-    println(""+miniSB.bufferLength() + ", " + miniSB.contentSize())
 }

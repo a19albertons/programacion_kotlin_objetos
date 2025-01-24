@@ -1,4 +1,4 @@
-class MyLittleDecimal2(entrada: String) {
+class MyLittleDecimal(entrada: String) {
     var valor:Int
 
     init {

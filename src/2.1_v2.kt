@@ -1,7 +1,7 @@
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-class Punto2D2(var x: Double =0.0, var y: Double =0.0){
+class Punto2D(var x: Double =0.0, var y: Double =0.0){
 
     constructor(p: Punto2D): this(p.x, p.y){
 
@@ -18,9 +18,12 @@ class Punto2D2(var x: Double =0.0, var y: Double =0.0){
         return (abs(p.x-this.x) + abs(p.y-this.y))
     }
     fun slope(p: Punto2D):Double {
-        val diferencia_X= p.x-this.x
-        val diferencia_Y=(p.y-this.y)
-        var devolver= diferencia_Y/diferencia_X
+        val salto= abs(p.x-this.x).toInt()
+        val cuesta_total=(p.y-this.y)
+        var devolver= abs(p.x-this.x)
+        for (i in 1..salto-1){
+            devolver /= cuesta_total
+        }
         return devolver
     }
 
@@ -29,10 +32,7 @@ class Punto2D2(var x: Double =0.0, var y: Double =0.0){
     }
 
 }
-
 fun main(){
-
-
     var p = Punto2D()
     println(p)
 
@@ -42,6 +42,8 @@ fun main(){
     var p1 = Punto2D(4.5, 5.5)
     var p2 = Punto2D(p1)
     println(p2)
+
+
 
 
 
@@ -56,7 +58,6 @@ fun main(){
     p = Punto2D(3.2, -4.8)
     p.flip()
     println(p)
-
 
 
     p = Punto2D(-3.0, 4.0)

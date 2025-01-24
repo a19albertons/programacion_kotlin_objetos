@@ -1,4 +1,4 @@
-class MyScanner2(var datos:String){
+class MyScanner(var datos:String){
     var pos:Int=0
 
     fun hasNextLine(): Boolean{
@@ -203,8 +203,18 @@ fun main(){
     ms= MyScanner("hola a todos")
     println(ms.pos)
     println(ms.next())
+    println(ms.pos)
     println(ms.next())
     println(ms.pos)
+    println(ms.hasNext())
+    ms= MyScanner("HOLA \t \n A TODOS \n\t   \n")
+    println(ms.next())
+    println(ms.pos)
+    println(ms.next())
+    println(ms.pos)
+    println(ms.next())
+    println(ms.pos)
+    println(ms.hasNext())
 
     println()
 

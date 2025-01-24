@@ -2,21 +2,7 @@ class MyScanner(var datos:String){
     var pos:Int=0
 
     fun hasNextLine(): Boolean{
-        var devolver = false
-        if (datos.length==0){
-            return false
-        }
-//        print(datos.length)
-        for (i in pos..datos.length-1){
-            if (!(datos[i] == '\n')){
-                devolver=true
-            }
-            if (devolver==true){
-//                pos=i
-                break
-            }
-        }
-        return devolver
+        return pos<datos.length
     }
     fun hasNext(): Boolean {
         var devolver = false

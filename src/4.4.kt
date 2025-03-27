@@ -1,8 +1,15 @@
 class Persona(var nombre:String, var edad:Int) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (other == null || other !is Persona) return false
+        if (javaClass != other?.javaClass) return false
+
+        other as Persona
+
         return edad == other.edad
+    }
+
+    override fun hashCode(): Int {
+        return edad
     }
 }
 data class Persona2(var nombre:String, var edad:Int)

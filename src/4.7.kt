@@ -1,20 +1,18 @@
 //import kotlin.math.PI
 //
 //class Cuadrado(var tamano: Double, color: String):Figura(color) {
-//    override fun area(): String {
-//        return ""+tamano*tamano
+//    override fun area(): Double {
+//        return tamano*tamano
 //    }
 //}
 //class Circulo(var tamano: Double, color: String):Figura(color) {
-//    override fun area(): String {
-//        return ""+tamano*tamano* PI
+//    override fun area(): Double {
+//        return tamano*tamano* PI
 //    }
 //}
 //
-//open class Figura(color: String) {
-//    open fun area(): String {
-//        return "99.99"
-//    }
+//open class Figura(var color: String) {
+//    open fun area()=99.99
 //
 //}
 //

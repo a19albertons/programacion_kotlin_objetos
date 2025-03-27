@@ -1,13 +1,14 @@
-//class Cuadrado(tamano: Double, color: String):Figura(color) {
+//class Cuadrado(var tamano: Double, color: String):Figura(color) {
 //
 //}
-//class Circulo(tamano: Double, color: String):Figura(color) {
+//class Circulo(var tamano: Double, color: String):Figura(color) {
 //
 //}
 //
-//open class Figura(color: String) {
+//open class Figura(var color: String) {
 //
 //}
+
 //fun main(){
 //    val figura = Figura("rojo")
 //    val miCuadrado = Cuadrado(2.5, "azul")//lado, color

@@ -1,6 +1,6 @@
 import kotlin.math.PI
 
-class Cuadrado(var tamano: Double):Figura() {
+class Cuadrado(var tamano: Double):Figura {
     override fun area(): Double {
         return tamano*tamano
     }
@@ -8,7 +8,7 @@ class Cuadrado(var tamano: Double):Figura() {
         return "Dibujando un cuadrado"
     }
 }
-class Circulo(var tamano: Double):Figura() {
+class Circulo(var tamano: Double):Figura {
     override fun area(): Double {
         return tamano*tamano* PI
     }
@@ -17,11 +17,9 @@ class Circulo(var tamano: Double):Figura() {
     }
 }
 
-open class Figura() {
-    open fun area()=99.99
-    open fun dibujar():String{
-        return "Dibujando una figura"
-    }
+interface Figura {
+    fun area():Double
+    fun dibujar():String
 }
 
 fun main(){

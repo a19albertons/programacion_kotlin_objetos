@@ -7,19 +7,13 @@
 //}
 //class Circulo(var tamano: Double, var color: String) {
 //    var f:Figura = Figura(color)
-//    fun area(): Double {
-//        return tamano*tamano* PI
-//    }
-//    fun color():String{
-//        return "El color de la figura es $color"
-//    }
+//    fun area()=tamano*tamano* PI
+//    fun color()=f.color()
 //}
 //
 //open class Figura(var color: String) {
 //    open fun area()=99.99
-//    fun color():String{
-//        return "El color de la figura es $color"
-//    }
+//    fun color() = "El color de la figura es $color"
 //}
 //
 //

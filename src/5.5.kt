@@ -28,16 +28,7 @@ fun main() {
         }
     }
 }
-private fun Any.volar() {
-    when (this) {
-        is Pajaro -> println("volar como un pájaro")
-        is Avion -> println("volar como un avión")
-        is Superheroe -> heroe.volar()
-        else -> println("indeterminado")
-    }
-}
-
-class Superheroe(val heroe: Volador) {
+class Superheroe(val heroe: Volador): Volador by heroe{
     fun salvarElMundo() {
         println("¡El superhéroe está salvando el mundo!!!")
     }

@@ -13,11 +13,6 @@ class Punto(val x: Int, val y: Int) {
         contador= contador+1
     }
     companion object {
-        var contador: Any = 0
+        var contador: Int = 0
     }
-
-}
-
-private operator fun Any.plus(i: Int): Any {
-    return this.toString().toInt()+i
 }

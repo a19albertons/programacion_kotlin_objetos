@@ -1,8 +1,11 @@
 //fun main(){
 //    val entrada= readln()
+////    val entrada= "4 2 3 8 -1 -1 -1 -1 -1"
 //    val cosa=Arbol(entrada)
-//    println("recorrido preorden con TABS")
-//    cosa.preorden()
+////    println("recorrido preorden con TABS")
+////    cosa.preorden()
+//    println("Máximo: ${cosa.maxAB(cosa.raiz)}")
+//    println("Mínimo: ${cosa.minAB(cosa.raiz)}")
 ////    println("Máximo: ${cosa.maxAB(cosa.raiz)}")
 //}
 //class NodoArbol(var dato: Int) {
@@ -54,5 +57,12 @@
 //        val maxizq = maxAB(n.nodoIzq)
 //        val maxder= maxAB(n.nodoDer)
 //        return maxOf(actual, maxizq, maxder)
+//    }
+//    fun minAB(n:NodoArbol?):Int{
+//        if (n==null) return Int.MAX_VALUE
+//        val actual = n.dato
+//        val maxizq = minAB(n.nodoIzq)
+//        val maxder= minAB(n.nodoDer)
+//        return minOf(actual, maxizq, maxder)
 //    }
 //}

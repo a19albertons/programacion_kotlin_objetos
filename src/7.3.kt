@@ -22,13 +22,11 @@ fun main() {
     println(editor.getTexto())  // → Empecemos ...
 }
 
+//incluye mejora propuesta por copilot al crear el estado inicial integramos un init con el listOf
 class Editor {
     private val texto = StringBuilder()
-    private val stack = ArrayDeque<String>()
+    private val stack = ArrayDeque<String>(listOf(""))
     private var estado = 0
-    init {
-        stack.add("")
-    }
     fun insert(text: String) {
         texto.append(text)
         stack.add(texto.toString())

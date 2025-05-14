@@ -6,6 +6,6 @@ fun main() {
     imprimirCualquierValor(listOf(1, 2, 3)) // Lista
 }
 inline fun <reified T> imprimirCualquierValor(value: T) {
-    val typeName = T::class.simpleName
+    val typeName = value!!::class.simpleName // Use runtime type of value
     println("El valor recibido es: $value (Tipo: $typeName)")
 }
